@@ -7,7 +7,7 @@ import requests
 
 URL = "https://xcodereleases.com/data.json"
 DOMAIN = "https://download.developer.apple.com/Developer_Tools/"
-MAX_VERSION = 11.3
+MAX_VERSION = 4 
 
 
 # query API on a cron job
@@ -84,6 +84,7 @@ for item in j:
 
            # DOWNLOAD INSTALL FILE
            url = item['links']['download']['url']
+           print(url)
            ver_name = version_name(url)
            download(r, url, ver_name)
 
